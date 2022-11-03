@@ -4,9 +4,7 @@
 
 @if(session()->has('Finalizado')) 
 {!! " <script> Swal.fire(
- 'Muy Bien Very Good!',
- 'Libro Registrado ',
- 'success'  
+ 'Libro Registrado!' 
  ) </script> "!!}
 
 @endif
@@ -25,7 +23,7 @@
   <div class="card-header" >
 
   
-    <form method="post"action ="GuardarLibro">
+    <form method="post"action ="confirmarlibro">
     @csrf
 
     <div class="card-header fw-bolder">
@@ -35,7 +33,7 @@
     <div class="mb-2">
         <p class="text-primary fst-italic">{{$errors->first('numISBN')}}</p>
         <label class="form-label">ISBN</label>
-        <input type="number" class="form-control" name="numISBN" value="{{ old('numISBN')}}">
+        <input type="number" class="form-control" name="numISBN" placeholder="Minimo 13 numeros "value="{{ old('numISBN')}}">
     </div>
 
     <div class="mb-2">
