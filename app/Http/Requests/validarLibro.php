@@ -24,12 +24,12 @@ class validarLibro extends FormRequest
     public function rules()
     {
         return [
-            'numISBN' => 'required|min:13',
+            'numISBN' => 'required|numeric|min:13',
             'txtTittle' => 'required',
             'txtAutor' => 'required',
-            'numPaginas' => 'required',
+            'numPaginas' => 'required|numeric',
             'txtEditorial' => 'required',
-            'txtCorreo' => 'required'
+            'txtCorreo' => 'required|email'
         ];
     }
 }

@@ -1,10 +1,17 @@
 @extends('Plantilla')
-
 @section('contenido')
 
-@if(session()->has('Finalizado')) 
+@if(session()->has('Finalizado'))
+
+<?php
+$txtTittle=session()->get('Variable');
+?>
+
+
+
 {!! " <script> Swal.fire(
- 'Libro Registrado!' 
+ 'Libro: {$txtTittle} Registrado!',
+ 'Gracias'
  ) </script> "!!}
 
 @endif
@@ -16,12 +23,9 @@
         @endif
 
 <div class="container mt-6 col-md-4">
-  
 <div aling="center">
-
 <div class="card text-center" style="width: 30rem;">
   <div class="card-header" >
-
   
     <form method="post"action ="confirmarlibro">
     @csrf
