@@ -14,5 +14,9 @@ Route::get('Registro',[vistasLibreria::class,'viewRegistroL'])->name('Regibook')
 
 Route::post('confirmarlibro', [vistasLibreria::class, 'GuardarLi'])->name('save');
 
+Route::get('RegistroA',[vistasLibreria::class,'viewRegistroA'])->name('regiautor');
+
+Route::post('confirmar', [vistasLibreria::class,'GuardarAu'])->name('save');
+
 
 

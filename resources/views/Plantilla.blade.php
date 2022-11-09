@@ -27,6 +27,10 @@
         <li class="nav-item">
           <a class="nav-link" href="Registro">Registrar libro</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="RegistroA">Registrar Autor</a>
+        </li>
       </ul>
     </div>
   </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\validarLibro;
+use App\Http\Requests\validarAutor;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 
@@ -22,12 +23,23 @@ class vistasLibreria extends Controller
 
     }
 
+    public function viewRegistroA(){
+        return view('RegistroA');
+
+    }
+
     public function GuardarLi(validarLibro $req){
 
         $name=$req ->input('txtTittle');
 
 
         return redirect('Registro')->with('Finalizado', 'Libro Guardado')->with('Variable',$name);
+    }
+
+
+    public function GuardarAu(validarAutor $req){
+
+        return redirect('RegistroA')->with('Finalizado', 'Autor Guardado');
 
     }
 }
