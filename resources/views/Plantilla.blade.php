@@ -25,12 +25,27 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="Registro">Registrar libro</a>
+          <a class="nav-link" href="Registro/create">Registrar libro</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('autor.index')}}" >Vista de Autores</a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link" href="RegistroA">Registrar Autor</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('autor.index')}}" >Vista de Autores</a>
+        </li>
+
+        
+
+        
+
+
+        
       </ul>
     </div>
   </div>

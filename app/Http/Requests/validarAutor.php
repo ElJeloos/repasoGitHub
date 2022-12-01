@@ -26,7 +26,7 @@ class validarAutor extends FormRequest
         return [
             'txtnombre' => 'required|min:4',
             'ffecha' => 'required',
-            'nolibros' => 'required|numeric|max:4',
+            'nolibros' => 'required|max:4',
         ];
     }
 }

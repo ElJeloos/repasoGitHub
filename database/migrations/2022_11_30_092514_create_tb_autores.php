@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_autores', function (Blueprint $table) {
+            $table->engine="InnoDB";
             $table->increments('idAutor');
             $table->string('Nombre');
             $table->date('fecha');

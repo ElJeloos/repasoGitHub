@@ -23,7 +23,8 @@ class controladorBD extends Controller
      */
     public function create()
     {
-        //
+        return view('Registro');
+
     }
 
     /**
