@@ -40,8 +40,7 @@ class controladorBDa extends Controller
 
     public function show($id)
     {
-        $consultaId = DB::table('tb_autores')->where('idAutor',$id)->first();
-        return view('EliminarA', compact('consultaId'));
+        
     }
 
 
@@ -69,6 +68,6 @@ class controladorBDa extends Controller
     public function destroy($id)
     {
         DB::table('tb_autores')->where('idAutor', $id)->delete();
-        return redirect('VerA')->with('EliminarA', 'Recuerdo Eliminado');
+        return redirect('Autor')->with('EliminarA', 'Recuerdo Eliminado');
     }
 }

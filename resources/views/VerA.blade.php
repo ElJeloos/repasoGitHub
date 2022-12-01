@@ -51,14 +51,19 @@
             <td>{{ $consulta->fecha }}</td>
             <td>{{ $consulta->numPag }}</td>
             <td>
-                <a href="{{route('autor.edit' , $consulta->idAutor)}}" class="btn btn-outline-success">Editar</a>
+                <a href="{{route('autor.edit' , $consulta->idAutor)}}" class="btn btn-outline-success">Editar <i class="bi bi-pencil-square"></i></a> 
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#MEliminarA{{$consulta->idAutor}}">
+                Eliminar <i class="bi bi-trash-fill"></i>
+                </button>
             </td>
+            @include('MEliminarA')
 
           </tr>
           @endforeach
         </tbody>
 
       </table>
+      
 
 
 
