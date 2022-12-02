@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('tb_autores', function (Blueprint $table) {
             $table->engine="InnoDB";
-            $table->increments('idAutor');
+            $table->bigIncrements('idAutor');
             $table->string('Nombre');
             $table->date('fecha');
             $table->integer('numPag');
             $table->timestamps();
         });
+
     }
 
     /**

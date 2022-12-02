@@ -20,31 +20,24 @@ Route::get('Autor', [ControladorBDa::class, 'index'])->name('autor.index');
 
 Route::post('autor', [ControladorBDa::class, 'store'])->name('autor.store');
 
-
 Route::get('autor/{id}/edit', [ControladorBDa::class, 'edit'])->name('autor.edit');
 Route::put('Autor/{id}', [ControladorBDa::class, 'update'])->name('autor.update');
 
 Route::delete('autor/{id}', [ControladorBDa::class, 'destroy']) -> name('autor.destroy');
 
 
-
-
-
-
-
 //Libros
+Route::get('Registro/create', [ControladorBD::class, 'create'])->name('registrol.create');
 
+Route::get('libro', [ControladorBD::class, 'index'])->name('libro.index');
 
-Route::get('Registro',[vistasLibreria::class,'viewRegistroL'])->name('Regibook');
+Route::post('libro', [ControladorBD::class, 'store'])->name('libro.store');
 
-Route::get('Registro/create',[controladorBD::class,'create'])->name('Registro.create');
+Route::get('libro/{id}/edit', [ControladorBD::class, 'edit'])->name('libro.edit');
 
+Route::put('libro/{id}', [ControladorBD::class, 'update'])->name('libro.update');
 
-Route::post('confirmarlibro', [vistasLibreria::class, 'GuardarLi'])->name('save');
-
-Route::get('RegistroA',[vistasLibreria::class,'viewRegistroA'])->name('regiautor');
-
-Route::post('confirmar', [vistasLibreria::class,'GuardarAu'])->name('save');
+Route::delete('libro/{id}', [ControladorBD::class, 'destroy']) -> name('libro.destroy');
 
 
 

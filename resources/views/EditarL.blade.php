@@ -1,20 +1,14 @@
 @extends('Plantilla')
 @section('contenido')
 
-@if(session()->has('Finalizado'))
+@if(session()->has('confirmarL'))
+    {!!" <script > Swal.fire(
+  'Proceso Exitoso',
+  'Libro Guardado'
+)  </script>"!!}
+ @endif
 
-<?php
-$txtTittle=session()->get('Variable');
-?>
 
-
-
-{!! " <script> Swal.fire(
- 'Libro: {$txtTittle} Registrado!',
- 'Gracias'
- ) </script> "!!}
-
-@endif
 
 @if($errors->any())
         @foreach($errors->all() as $error)
@@ -27,11 +21,12 @@ $txtTittle=session()->get('Variable');
 <div class="card text-center" style="width: 30rem;">
   <div class="card-header" >
   
-  <form action="{{route('libro.store')}}" method="post">
+  <form action="{{route('libro.update', $consultaId->idLibro)}}" method="post">
     @csrf
+    @method('PUT');
 
     <div class="card-header fw-bolder">
-        Registro  de Libros 
+        Editar Autor
     </div>
 
     <div class="mb-2">
@@ -80,8 +75,10 @@ $txtTittle=session()->get('Variable');
         <label class="form-label"> Email del editorial </label>
         <input type="Email" class="form-control" name="txtCorreo" placeholder="Correo de la Editorial " value="{{ old('txtCorreo')}}">
     </div>
+
+
             
-    <button type="submit" class="btn btn-primary">Confirmar libro</button>
+    <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
   </div>
 
@@ -90,7 +87,6 @@ $txtTittle=session()->get('Variable');
 </div>
 
 @stop
-
 
 
 

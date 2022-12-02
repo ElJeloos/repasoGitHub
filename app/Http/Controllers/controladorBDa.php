@@ -34,7 +34,7 @@ class controladorBDa extends Controller
             "updated_at"=> Carbon::now()
 
         ]);
-        return redirect('Autor')->with('confirmarA','Autor Guardado');
+        return redirect('Registro/create')->with('confirmarA','Autor Guardado');
     }
 
 
@@ -68,6 +68,6 @@ class controladorBDa extends Controller
     public function destroy($id)
     {
         DB::table('tb_autores')->where('idAutor', $id)->delete();
-        return redirect('Autor')->with('EliminarA', 'Recuerdo Eliminado');
+        return redirect('Autor')->with('EliminarA', 'Autor Eliminado');
     }
 }
