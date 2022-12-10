@@ -39,7 +39,12 @@ class vistasLibreria extends Controller
 
     public function GuardarAu(validarAutor $req){
 
-        return redirect('RegistroA')->with('Finalizado', 'Autor Guardado');
+        $name=$req ->input('nolibros');
+
+
+        return redirect('RegistroA')->with('Finalizado', 'Autor Guardado')->with('Variable',$name);
+
+
 
     }
 }
